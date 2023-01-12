@@ -1,0 +1,25 @@
+{
+    "mode": null,
+    "mapping.!Path":{
+        "$ref": "{{_Dir}}",
+        "method": {
+            "name": "join_Path",
+            "kwargs":{
+                "path": "mapping.txt"
+            }
+        }    
+
+    },
+    "hosts.!Path":{
+        "$ref": "$Dir",
+        "method": {
+            "name": "construct",
+            "args":["Path"],
+            "kwargs":{
+                "path": "/etc/hosts"
+            }
+        }    
+    }
+
+}
+
