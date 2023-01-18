@@ -1,17 +1,21 @@
 import kabbes_dns_hosts
-import kabbes_user_client
+import kabbes_client
 import py_starter as ps
 
 class Client( kabbes_dns_hosts.DNSHosts ):
 
-    BASE_CONFIG_DICT = {
-        "_Dir": kabbes_dns_hosts._Dir,
+    _BASE_DICT = {
         "_src_Dir": kabbes_dns_hosts._src_Dir,
         "_repo_Dir": kabbes_dns_hosts._repo_Dir
     }
 
-    def __init__( self, dict={}, **kwargs ):
+    def __init__( self, dict={} ):
 
-        dict = ps.merge_dicts( Client.BASE_CONFIG_DICT, dict )
-        self.cfg = kabbes_user_client.Client( dict=dict, **kwargs ).cfg
+        d = {}
+        d.update( Client._BASE_DICT )
+        d.update( dict )
+
+        self.Package = kabbes_client.Package( kabbes_dns_hosts._Dir, dict=d )
+        self.cfg = self.Package.cfg
+
         kabbes_dns_hosts.DNSHosts.__init__( self )

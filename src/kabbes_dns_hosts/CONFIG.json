@@ -1,7 +1,7 @@
 {
     "mode": null,
     "mapping.!Path":{
-        "$ref": "{{_Dir}}",
+        "$ref": "{R{_Dir}R}",
         "method": {
             "name": "join_Path",
             "kwargs":{
