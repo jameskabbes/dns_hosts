@@ -9,7 +9,6 @@ class DNSHosts:
 
         self.mapping = self.cfg['mapping.Path'].read()
         print (self.mapping)
-        self.cfg.print_atts()
 
         self.hosts = self.cfg['hosts.Path'].read()
 
