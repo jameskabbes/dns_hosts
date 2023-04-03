@@ -4,10 +4,7 @@ import py_starter as ps
 
 class Client( kabbes_dns_hosts.DNSHosts ):
 
-    _BASE_DICT = {
-        "_src_Dir": kabbes_dns_hosts._src_Dir,
-        "_repo_Dir": kabbes_dns_hosts._repo_Dir
-    }
+    _BASE_DICT = {}
 
     def __init__( self, dict={} ):
 
